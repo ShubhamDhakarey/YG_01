@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% include 'navigation.html' %}
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>YuktiGraphics</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Favicons -->
+  <link href="{% static 'image/imagecon.png' %}" rel="icon">
+  <link href="{% static 'image/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+
+  <link href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static '/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet"> 
+
+  <link rel="stylesheet" href="static/assets/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="static/assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="static/assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="static/assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="static/assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="static/assets/mobirise/css/mbr-additional.css" type="text/css">
+ 
+
+</head>
+
+<body>
+
+  <section data-bs-version="5.1" class="header14 cid-sFzxmVl7J6" id="header14-1f">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-md-6 image-wrapper">
+                <img src="static/assets/images/mbr-1256x829.jpg" alt="Mobirise Website Builder">
+            </div>
+            <div class="col-12 col-md">
+                <div class="text-wrapper">
+                    <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>Business Card Maker</strong></h1>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        Create a stunning business card in minutes. Browse thousands of professionally curated business cards and edit them with ease. Whether you're an accountant or hairstylist, we've got a business card that's perfect for you. Our business card maker lets you edit the colors, font, and layout, then download the card instantly.</p>
+                    <div class="mbr-section-btn mt-3"><a class="btn btn-secondary display-4" href="{% url 'make_business_card' %}">MAKE A BUSINESS CARD</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  
+{% comment %} Visiting Cards {% endcomment %}
+{% block content %}
+<section data-bs-version="5.1" class="features3 cid-tYwYkp0vdm" id="features3-0">
+  
+  <div class="container">
+      <div class="mbr-section-head">
+          <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+              <strong>Visiting Cards</strong></h4>
+          <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5"></h5>
+      </div>
+    <div class="row">
+        {% for x in card %}
+         <div class="col-sm-4">
+          <div class="card m-2">
+           <img src="{{x.image.url}}" alt="" class="card-img-top" height="200px">
+           <div class="card-footer">
+            <small class="text-muted">{{x.category}}</small>
+            <p class="mbr-text mbr-fonts-style mt-3 display-7">{{x.description}}</p>
+           </div>
+           <div class="mbr-section-btn item-footer mt-2"><a href="/cards/{{x.card_id}}" class="btn btn-primary item-btn display-7">Load More
+            &gt;</a></div>
+          </div>
+         </div>
+        {% endfor %}
+    </div>
+              
+</section>
+{% endblock %}
+{% comment %} About Company  {% endcomment %}
+
+<section data-bs-version="5.1" class="header14 cid-sFzz5E692j" id="header14-1j">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-md-6 image-wrapper">
+                <img src="static/assets/images/mbr-1256x837.jpg" alt="Mobirise Website Builder">
+            </div>
+            <div class="col-12 col-md">
+                <div class="text-wrapper">
+                    <h1 class="mbr-section-title mbr-fonts-style mb-3 display-2">
+                        <strong>About Company</strong></h1>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut dapibus massa, efficitur varius augue. In vel elit lorem. Fusce et dui fringilla, suscipit nulla sed, viverra nunc. Nulla ut justo ut enim vehicula maximus. Nam et neque tempus.<br><br>Duis lobortis aliquam varius. Aliquam at metus at urna bibendum aliquet. Curabitur ut commodo ex, nec vehicula eros. Suspendisse dictum eu tortor id aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.<br></p>
+                    <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-4" href="">Read More</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% comment %} Why client choose   {% endcomment %}
+<section data-bs-version="5.1" class="content10 cid-sFAZRnJnnI" id="content10-22">
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md">
+                
+                <h6 class="mbr-section-subtitle mbr-fonts-style mb-4 display-2"><strong>Why clients choose us?</strong></h6>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <p class="mbr-text mbr-fonts-style display-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa a nisl condimentum mattis. Mauris semper risus dui, vitae pulvinar sapien rutrum in. Cras risus ante, porta vel volutpat vel, pulvinar in magna. Donec lacinia in mi eget pharetra.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% comment %} Our Pricing Plan {% endcomment %}
+<section data-bs-version="5.1" class="content4 cid-sFzIdnt1ra" id="content4-1q">
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-md-12 col-lg-10">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2"><strong>Our Pricing Plan</strong></h3>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="pricing2 cid-sFzDdjoEIw" id="pricing2-1k">
+    
+
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 align-center col-lg-3">
+                <div class="plan">
+                    <div class="plan-header">
+                        <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                            <strong>Monthly</strong>
+                        </h6>
+                        <div class="plan-price">
+                            <p class="price mbr-fonts-style m-0 display-2"><strong>$19</strong></p>
+                            <p class="price-term mbr-fonts-style mb-3 display-7"><strong>Per month</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="plan-body">
+                        <div class="plan-list mb-4">
+                            <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                                <li class="list-group-item">Market Analysis</li><li class="list-group-item">Margin Trading</li><li class="list-group-item">Stable Income</li>
+                            </ul>
+                        </div>
+                        <div class="mbr-section-btn text-center"><a href="https://mobiri.se" class="btn btn-primary-outline display-4">Get started</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 align-center col-lg-3">
+                <div class="plan">
+                    <div class="plan-header">
+                        <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                            <strong>Yearly</strong>
+                        </h6>
+                        <div class="plan-price">
+                            <p class="price mbr-fonts-style m-0 display-2"><strong>$119</strong></p>
+                            <p class="price-term mbr-fonts-style mb-3 display-7"><strong>Per year</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="plan-body">
+                        <div class="plan-list mb-4">
+                            <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                                <li class="list-group-item">Market Analysis
+</li><li class="list-group-item">Margin Trading
+</li><li class="list-group-item">Stable Income</li>
+                            </ul>
+                        </div>
+                        <div class="mbr-section-btn text-center"><a href="https://mobiri.se" class="btn btn-primary-outline display-4">Get started</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 align-center col-lg-3">
+                <div class="plan">
+                    <div class="plan-header">
+                        <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                            <strong>Lifetime</strong>
+                        </h6>
+                        <div class="plan-price">
+                            <p class="price mbr-fonts-style m-0 display-2"><strong>$399</strong></p>
+                            <p class="price-term mbr-fonts-style mb-3 display-7"><strong>One time</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="plan-body">
+                        <div class="plan-list mb-4">
+                            <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                                <li class="list-group-item">Market Analysis
+</li><li class="list-group-item">Margin Trading
+</li><li class="list-group-item">Stable Income</li>
+                            </ul>
+                        </div>
+                        <div class="mbr-section-btn text-center"><a href="https://mobiri.se" class="btn btn-primary-outline display-4">Get started</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 align-center col-lg-3">
+                <div class="plan">
+                    <div class="plan-header">
+                        <h6 class="plan-title mbr-fonts-style mb-3 display-5">
+                            <strong>Free</strong>
+                        </h6>
+                        <div class="plan-price">
+                            <p class="price mbr-fonts-style m-0 display-2"><strong>$0</strong></p>
+                            <p class="price-term mbr-fonts-style mb-3 display-7"><strong>No payment</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="plan-body">
+                        <div class="plan-list mb-4">
+                            <ul class="list-group mbr-fonts-style list-group-flush display-7">
+                                <li class="list-group-item">Market Analysis
+</li><li class="list-group-item">Margin Trading
+</li><li class="list-group-item">Stable Income</li>
+                            </ul>
+                        </div>
+                        <div class="mbr-section-btn text-center"><a href="https://mobiri.se" class="btn btn-primary-outline display-4">Get started</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% comment %} Professional Team {% endcomment %}
+<section data-bs-version="5.1" class="team1 cid-sFzErVWEaH" id="team1-1o">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h3 class="mbr-section-title1 mbr-fonts-style align-center mb-5 display-2">
+                    <strong>Professional Team</strong>
+                </h3>
+                
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card-wrap">
+                    <div class="image-wrap">
+                        <img src="static/assets/images/mbr-596x398.jpg" alt="Mobirise Website Builder">
+                    </div>
+                    <div class="content-wrap">
+                        <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5">
+                            <strong>Pradeep Sachdeva</strong></h5>
+                        <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-4"><strong>Manager</strong></h6>
+                        <p class="card-text mbr-fonts-style align-center display-7">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        
+                        <div class="mbr-section-btn card-btn align-center"><a class="btn btn-primary display-4" href="https://mobiri.se">View
+                                Profile</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="card-wrap">
+                    <div class="image-wrap">
+                        <img src="static/assets/images/mbr-3-596x397.jpg" alt="Mobirise Website Builder">
+                    </div>
+                    <div class="content-wrap">
+                        <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5">
+                            <strong>Neha Sachdeva</strong></h5>
+                        <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-4">
+                            <strong>Manager</strong>
+                        </h6>
+                        <p class="card-text mbr-fonts-style align-center display-7">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                        
+                        <div class="mbr-section-btn card-btn align-center"><a class="btn btn-primary display-4" href="https://mobiri.se">View
+                                Profile</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="card-wrap">
+                    <div class="image-wrap">
+                        <img src="static/assets/images/mbr-2-596x397.jpg" alt="Mobirise Website Builder">
+                    </div>
+                    <div class="content-wrap">
+                        <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5"><strong>Sunil Kumar</strong></h5>
+                        <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-4">
+                            <strong>Trader</strong>
+                        </h6>
+                        <p class="card-text mbr-fonts-style align-center display-7">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                        
+                        <div class="mbr-section-btn card-btn align-center"><a class="btn btn-primary display-4" href="https://mobiri.se">View
+                                Profile</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="card-wrap">
+                    <div class="image-wrap">
+                        <img src="static/assets/images/mbr-596x401.jpeg" alt="Mobirise Website Builder">
+                    </div>
+                    <div class="content-wrap">
+                        <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5"><strong>Neelu</strong></h5>
+                        <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-4"><strong>Trader</strong></h6>
+                        <p class="card-text mbr-fonts-style align-center display-7">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                        
+                        <div class="mbr-section-btn card-btn align-center"><a class="btn btn-primary display-4" href="https://mobiri.se">View
+                                Profile</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% comment %} Follow us {% endcomment %}
+<section data-bs-version="5.1" class="contacts4 cid-sFAyMcKwph" id="contacts4-21">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="text-content col-12 col-md-6">
+                <h2 class="mbr-section-title mbr-fonts-style display-2">
+                    <strong>Follow Us</strong>
+                </h2>
+                <p class="mbr-text mbr-fonts-style display-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut dapibus massa, efficitur varius augue. In vel elit lorem. Fusce et dui fringilla, suscipit nulla sed, viverra nunc. Nulla ut justo ut enim vehicula maximus. Nam et neque tempus, ultricies purus vel, suscipit leo. Praesent orci turpis, maximus facilisis rhoncus vel, consequat ac augue. Nam facilisis mi non elit tempor sodales.<br></p>
+            </div>
+            <div class="icons d-flex align-items-center col-12 col-md-6 justify-content-end mt-md-0 mt-2 flex-wrap">
+                <a href="https://www.yuktigraphics.com" target="_blank">
+                    <span class="mbr-iconfont mbr-iconfont-social mobi-mbri-globe-2 mobi-mbri"></span>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                </a>
+                <a href="https://www.youtube.com/" target="_blank">
+                    <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                </a>
+                <a href="https://instagram.com/" target="_blank">
+                    <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                </a>                
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+{% comment %} Steps to make Cards {% endcomment %}
+<section data-bs-version="5.1" class="features23 cid-sFAyHxWQ1N" id="features24-20">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="card-wrapper mb-4">
+                    <div class="card-box align-center">
+                        <h4 class="card-title mbr-fonts-style mb-4 display-2">
+                            <strong>Steps to Start Making Business Card</strong></h4>
+                        <p class="mbr-text mbr-fonts-style mb-4 display-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut dapibus massa, efficitur varius augue. In vel elit lorem. Fusce et dui fringilla, suscipit nulla sed, viverra nunc. Nulla ut justo ut enim vehicula maximus. Nam et neque tempus, ultricies purus vel, suscipit leo.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="item first mbr-flex p-4">
+                    <div class="icon-wrap w-100">
+                        <div class="icon-box">
+                            <span class="step-number mbr-fonts-style display-5">1</span>
+                        </div>
+                    </div>
+
+                    <div class="text-box">
+                        <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7"><strong>Contact Us</strong></h4>
+                        <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut dapibus massa efficitur.</h5>
+                    </div>
+                </div>
+                <!-- <span mbr-icon class="mbr-iconfont mobi-mbri-devices mobi-mbri"></span> -->
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="item mbr-flex p-4">
+                    <div class="icon-wrap w-100">
+                        <div class="icon-box">
+                            <span class="step-number mbr-fonts-style display-5">2</span>
+                        </div>
+                    </div>
+                    <div class="text-box">
+                        <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7">
+                            <strong>Start Making card</strong></h4>
+                        <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut dapibus massa efficitur.</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="item mbr-flex p-4">
+                    <div class="icon-wrap w-100">
+                        <div class="icon-box">
+                            <span class="step-number mbr-fonts-style display-5">3</span>
+                        </div>
+                    </div>
+                    <div class="text-box">
+                        <h4 class="icon-title card-title mbr-black mbr-fonts-style display-7"><strong>Buy Card Plan</strong></h4>
+                        <h5 class="mbr-text mbr-black mbr-fonts-style display-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut dapibus massa efficitur.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% comment %} {% include 'feedback.html' %} {% endcomment %}
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+  {% include 'footer.html' %}
+
+</body>
+
+</html>
