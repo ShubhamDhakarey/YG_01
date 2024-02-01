@@ -1,12 +1,7 @@
 -------------------------------------------------------------*/
-/* @font-face {
-  font-family: Bubble;
-  src : url();
-} */
-
 body {
-  font-family: 'Roboto', sans-serif;
-   color: #444444;
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
 }
 
 a {
@@ -64,12 +59,12 @@ h6 {
 #header {
   transition: all 0.5s;
   z-index: 997;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 
 #header.header-scrolled,
 #header.header-inner-pages {
-  background: rgba(21, 22, 22, 0.9);
+  background: rgba(40, 58, 90, 0.9);
 }
 
 #header .logo {
@@ -90,7 +85,6 @@ h6 {
   max-height: 40px;
 }
 
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -99,7 +93,6 @@ h6 {
 */
 .navbar {
   padding: 0;
-  height: 100px;
 }
 
 .navbar ul {
@@ -112,7 +105,6 @@ h6 {
 
 .navbar li {
   position: relative;
-  
 }
 
 .navbar a,
